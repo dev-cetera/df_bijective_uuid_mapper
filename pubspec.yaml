@@ -1,0 +1,29 @@
+##.title
+## ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+##
+## Dart/Flutter (DF) Packages by DevCetra.com & contributors. See LICENSE file
+## in root directory.
+##
+## ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+##.title~
+
+name: df_bijective_uuid_mapper
+description: A package providing bijective UUID mapping for secure and efficienct lookups.
+version: 0.1.0
+repository: https://github.com/robmllze/bijective_uuid_mapper
+
+## -----------------------------------------------------------------------------
+
+environment:
+  sdk: ">=3.0.0 < 4.0.0"
+
+## -----------------------------------------------------------------------------
+
+dependencies:
+  crypto: ^3.0.3
+
+## -----------------------------------------------------------------------------
+
+dev_dependencies:
+  lints: ^4.0.0
+  test: ^1.24.0
