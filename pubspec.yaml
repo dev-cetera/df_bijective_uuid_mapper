@@ -9,8 +9,8 @@
 
 name: df_bijective_uuid_mapper
 description: A package providing bijective UUID mapping for secure and efficienct lookups.
-version: 0.1.0
-repository: https://github.com/robmllze/bijective_uuid_mapper
+version: 0.1.1
+repository: https://github.com/robmllze/df_bijective_uuid_mapper
 
 ## -----------------------------------------------------------------------------
 
