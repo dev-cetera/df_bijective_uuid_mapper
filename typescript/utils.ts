@@ -1,13 +1,16 @@
 //.title
 // ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
 //
-// Dart/Flutter (DF) Packages by DevCetra.com & contributors. See LICENSE file
-// in root directory.
+// Dart/Flutter (DF) Packages by DevCetra.com & contributors. The use of this
+// source code is governed by an MIT-style license described in the LICENSE
+// file located in this project's root directory.
+//
+// See: https://opensource.org/license/mit
 //
 // ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
 //.title~
 
-import * as crypto from 'crypto';
+import * as crypto from "crypto";
 
 // ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 
@@ -55,7 +58,7 @@ export function reverseBijectiveStringTransformationV1({
 
 // Converts string to a list of indices based on charList
 function stringToIndexes(input: string, charList: string): number[] {
-  return input.split('').map((c) => {
+  return input.split("").map((c) => {
     const index = charList.indexOf(c);
     if (index === -1) {
       throw new Error(`Invalid character: ${c}`);
@@ -67,12 +70,12 @@ function stringToIndexes(input: string, charList: string): number[] {
 // Converts a list of indices back to a string using charList
 function indexesToString(indexes: number[], charList: string): string {
   return String.fromCharCode(
-      ...indexes.map((i) => {
-        if (i < 0 || i >= charList.length) {
-          throw new Error(`Invalid index: ${i}`);
-        }
-        return charList.charCodeAt(i);
-      })
+    ...indexes.map((i) => {
+      if (i < 0 || i >= charList.length) {
+        throw new Error(`Invalid index: ${i}`);
+      }
+      return charList.charCodeAt(i);
+    })
   );
 }
 
@@ -89,31 +92,49 @@ function addDashesToString(source: string, positions: number[]): string {
 
 // Removes dashes from the given source string
 function removeDashesFromString(source: string): string {
-  return source.replace(/-/g, '');
+  return source.replace(/-/g, "");
 }
 
 // Maps x to a unique number using a bijective transformation
-function bijectiveTransformationV1(x: number, max: number, digest: string): number {
+function bijectiveTransformationV1(
+  x: number,
+  max: number,
+  digest: string
+): number {
   const a = generateAFromDigest(digest, max, 0);
   const b = generateBFromDigest(digest, max, 8);
   return bijectiveTransformation(x, max, a, b);
 }
 
-function bijectiveTransformation(x: number, max: number, a: number, b: number): number {
+function bijectiveTransformation(
+  x: number,
+  max: number,
+  a: number,
+  b: number
+): number {
   return (a * x + b) % (max + 1);
 }
 
 // Unmaps y that was previously mapped using bijectiveTransformationV1
-function reverseBijectiveTransformationV1(y: number, max: number, digest: string): number {
+function reverseBijectiveTransformationV1(
+  y: number,
+  max: number,
+  digest: string
+): number {
   const a = generateAFromDigest(digest, max, 0);
   const b = generateBFromDigest(digest, max, 8);
   return reverseBijectiveTransformation(y, max, a, b);
 }
 
-function reverseBijectiveTransformation(y: number, max: number, a: number, b: number): number {
+function reverseBijectiveTransformation(
+  y: number,
+  max: number,
+  a: number,
+  b: number
+): number {
   const aInverse = modularInverse(a, max + 1);
   let n = (aInverse * (y - b)) % (max + 1);
-  if (n < 0) n += (max + 1);
+  if (n < 0) n += max + 1;
   return n;
 }
 
@@ -136,7 +157,11 @@ function modularInverse(a: number, modulus: number): number {
 }
 
 // Generates a valid value for 'a' from the given digest
-function generateAFromDigest(digest: string, max: number, offset: number): number {
+function generateAFromDigest(
+  digest: string,
+  max: number,
+  offset: number
+): number {
   const modulus = max + 1;
   let a = generateInt32FromDigest(digest, offset) % modulus;
   while (a <= 1 || gcd(a, modulus) !== 1) {
@@ -156,7 +181,11 @@ function gcd(a: number, b: number): number {
 }
 
 // Generates a valid value for 'b' from the given digest
-function generateBFromDigest(digest: string, max: number, offset: number): number {
+function generateBFromDigest(
+  digest: string,
+  max: number,
+  offset: number
+): number {
   return generateInt32FromDigest(digest, offset) % (max + 1);
 }
 
@@ -168,10 +197,14 @@ function generateInt32FromDigest(digest: string, offset: number): number {
 
 // Returns a substring of the given source string starting at the given start index
 // and wrapping around to the beginning of the string if necessary
-function wrappableSubstring(source: string, start: number, length: number): string {
+function wrappableSubstring(
+  source: string,
+  start: number,
+  length: number
+): string {
   start = start % source.length;
   if (start < 0) start += source.length;
-  let substring = '';
+  let substring = "";
   for (let i = 0; i < length; i++) {
     const currentIndex = (start + i) % source.length;
     substring += source[currentIndex];
@@ -181,5 +214,5 @@ function wrappableSubstring(source: string, start: number, length: number): stri
 
 // Generates a SHA256 digest from the given password
 export function generateDigestFromSeed(password: string): string {
-  return crypto.createHash('sha256').update(password).digest('hex');
+  return crypto.createHash("sha256").update(password).digest("hex");
 }
