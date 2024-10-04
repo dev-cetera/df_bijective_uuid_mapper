@@ -1,10 +1,9 @@
 # Changelog
 
-## [0.1.3]
+## [0.1.2]
 
 - Released @ 10/2024 (UTC)
-- +docs: Update readme
-- chore: Update dependencies
+- docs: Update readme
 
 ## [0.1.2]
 
