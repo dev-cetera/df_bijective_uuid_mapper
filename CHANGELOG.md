@@ -4,7 +4,6 @@
 
 - Released @ 10/2024 (UTC)
 - docs: Update readme
-- docs: Update changelog
 
 ## [0.1.2]
 
