@@ -1,7 +1,7 @@
 //.title
 // ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
 //
-// Dart/Flutter (DF) Packages by DevCetra.com & contributors. The use of this
+// Dart/Flutter (DF) Packages by dev-cetera.com & contributors. The use of this
 // source code is governed by an MIT-style license described in the LICENSE
 // file located in this project's root directory.
 //
@@ -24,8 +24,7 @@ String bijectiveStringTransformationV1({
   final k = removeDashesFromString(source);
   final indexes = stringToIndexes(k, charList);
   final max = charList.length - 1;
-  final mappedIndexes =
-      indexes.map((i) => bijectiveTransformationV1(i, max, digest));
+  final mappedIndexes = indexes.map((i) => bijectiveTransformationV1(i, max, digest));
   final result = indexesToString(mappedIndexes, charList);
   final resultWithDashes = addDashesToString(result, [8, 12, 16, 20]);
   return resultWithDashes;
@@ -40,8 +39,7 @@ String reverseBijectiveStringTransformationV1({
   final k = removeDashesFromString(source);
   final indexes = stringToIndexes(k, charList);
   final max = charList.length - 1;
-  final mappedIndexes =
-      indexes.map((i) => reverseBijectiveTransformationV1(i, max, digest));
+  final mappedIndexes = indexes.map((i) => reverseBijectiveTransformationV1(i, max, digest));
   final result = indexesToString(mappedIndexes, charList);
   final resultWithDashes = addDashesToString(result, [8, 12, 16, 20]);
   return resultWithDashes;
