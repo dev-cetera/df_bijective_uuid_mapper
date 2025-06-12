@@ -2,7 +2,7 @@
 
 ## [0.1.4]
 
-- Released @ 11/2024 (UTC)
+- Released @ 6/2025 (UTC)
 - chore: Update dependencies
 - chore: Update CI/CD script
 

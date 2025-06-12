@@ -24,7 +24,9 @@ String bijectiveStringTransformationV1({
   final k = removeDashesFromString(source);
   final indexes = stringToIndexes(k, charList);
   final max = charList.length - 1;
-  final mappedIndexes = indexes.map((i) => bijectiveTransformationV1(i, max, digest));
+  final mappedIndexes = indexes.map(
+    (i) => bijectiveTransformationV1(i, max, digest),
+  );
   final result = indexesToString(mappedIndexes, charList);
   final resultWithDashes = addDashesToString(result, [8, 12, 16, 20]);
   return resultWithDashes;
@@ -39,7 +41,9 @@ String reverseBijectiveStringTransformationV1({
   final k = removeDashesFromString(source);
   final indexes = stringToIndexes(k, charList);
   final max = charList.length - 1;
-  final mappedIndexes = indexes.map((i) => reverseBijectiveTransformationV1(i, max, digest));
+  final mappedIndexes = indexes.map(
+    (i) => reverseBijectiveTransformationV1(i, max, digest),
+  );
   final result = indexesToString(mappedIndexes, charList);
   final resultWithDashes = addDashesToString(result, [8, 12, 16, 20]);
   return resultWithDashes;
@@ -86,11 +90,7 @@ String removeDashesFromString(String source) {
 }
 
 /// Maps [x] to a unique number using a bijective transformation.
-int bijectiveTransformationV1(
-  int x,
-  int max,
-  Digest digest,
-) {
+int bijectiveTransformationV1(int x, int max, Digest digest) {
   final a = generateAFromDigest(digest, max, 0);
   final b = generateBFromDigest(digest, max, 8);
   final y = bijectiveTransformation(x, max, a, b);
@@ -102,11 +102,7 @@ int bijectiveTransformation(int x, int max, int a, int b) {
 }
 
 /// Unmaps [y] that was previously mapped using [bijectiveTransformationV1].
-int reverseBijectiveTransformationV1(
-  int y,
-  int max,
-  Digest digest,
-) {
+int reverseBijectiveTransformationV1(int y, int max, Digest digest) {
   final a = generateAFromDigest(digest, max, 0);
   final b = generateBFromDigest(digest, max, 8);
   final x = reverseBijectiveTransformation(y, max, a, b);
