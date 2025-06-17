@@ -11,11 +11,12 @@
 ##.title~
 
 name: df_bijective_uuid_mapper
-description: A package providing bijective UUID mapping for secure and efficienct lookups.
-version: 0.1.4
-repository: https://github.com/dev-cetera/df_bijective_uuid_mapper
+homepage: https://dev-cetera.com/
+repository: https://github.com/robmllze/df_bijective_uuid_mapper
 funding:
   - https://www.buymeacoffee.com/dev_cetera
+description: A package providing bijective UUID mapping for secure and efficienct lookups.
+version: 0.1.4
 topics:
   - uuid
   - security
@@ -26,7 +27,7 @@ topics:
 ## -----------------------------------------------------------------------------
 
 environment:
-  sdk: ">=3.0.0 <4.0.0"
+  sdk: ">=3.5.0 <4.0.0"
 
 ## -----------------------------------------------------------------------------
 
@@ -37,3 +38,4 @@ dependencies:
 
 dev_dependencies:
   lints: ^6.0.0
+
