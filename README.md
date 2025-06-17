@@ -4,7 +4,7 @@
 Dart & Flutter Packages by dev-cetera.com & contributors.
 
 [![pub](https://img.shields.io/pub/v/df_bijective_uuid_mapper.svg)](https://pub.dev/packages/df_bijective_uuid_mapper)
-[![tag](https://img.shields.io/badge/tag-v0.1.4-purple)](https://github.com/dev-cetera/df_bijective_uuid_mapper/tree/v0.1.4)
+[![tag](https://img.shields.io/badge/tag-v0.1.6-purple)](https://github.com/dev-cetera/df_bijective_uuid_mapper/tree/v0.1.6)
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/dev-cetera/df_bijective_uuid_mapper/main/LICENSE)
 
 ---
@@ -49,4 +49,3 @@ If you're enjoying this package and find it valuable, consider showing your appr
 ## License
 
 This project is released under the [MIT License](https://raw.githubusercontent.com/dev-cetera/df_bijective_uuid_mapper/main/LICENSE). See [LICENSE](https://raw.githubusercontent.com/dev-cetera/df_bijective_uuid_mapper/main/LICENSE) for more information.
-
