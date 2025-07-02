@@ -14,7 +14,9 @@ name: df_bijective_uuid_mapper
 homepage: https://dev-cetera.com/
 repository: https://github.com/robmllze/df_bijective_uuid_mapper
 funding:
-  - https://www.buymeacoffee.com/dev_cetera
+- https://www.buymeacoffee.com/dev_cetera
+- https://www.patreon.com/c/RobertMollentze
+- https://github.com/sponsors/robmllze
 description: A package providing bijective UUID mapping for secure and efficienct lookups.
 version: 0.1.7
 topics:
